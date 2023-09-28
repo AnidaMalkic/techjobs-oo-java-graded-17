@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class JobTest {
     //TODO: Create your unit tests here
-
+@Test
     public void testSettingJobId() {
         Job firstJob = new Job();
         Job secondJob = new Job();
@@ -51,4 +51,6 @@ public class JobTest {
 
         assertFalse(firstJob.equals(secondJob));
     }
+
+
 }
