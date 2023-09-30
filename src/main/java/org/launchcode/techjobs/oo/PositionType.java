@@ -27,8 +27,8 @@ public class PositionType extends JobField{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PositionType that = (PositionType) o;
-        return id == that.id;
+        PositionType position = (PositionType) o;
+        return id == position.id;
     }
 
     // Getters and Setters:
