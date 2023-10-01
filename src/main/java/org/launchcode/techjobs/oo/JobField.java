@@ -11,9 +11,7 @@ public abstract class JobField {
         this();
         this.value = value;
     }
-
     public JobField() {
-
     }
 
     @Override

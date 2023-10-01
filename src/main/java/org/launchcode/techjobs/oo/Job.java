@@ -98,24 +98,15 @@ public class Job {
 
     @Override
     public String toString() {
-        return "\n" +
+        return System.lineSeparator() +
                 "ID: " + id +
                 "\nName: " + name +
                 "\nEmployer: " + employer.getValue() +
                 "\nLocation: " + location.getValue() +
                 "\nPosition Type: " + positionType.getValue() +
                 "\nCore Competency: " + coreCompetency.getValue() +
-                "\n";
+                System.lineSeparator();
 
-//                "\n" +
-//                "ID: " + id +
-//                "\nName: " + name +
-//                "\nEmployer: " + "Data not available" +
-//                "\nLocation: " + location.getValue() +
-//                "\nPosition Type: " + positionType.getValue() +
-//                "\nCore Competency: " + "Data not available" +
-//                "\n";
     }
-
 
 }

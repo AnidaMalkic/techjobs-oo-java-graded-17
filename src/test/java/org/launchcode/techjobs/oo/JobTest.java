@@ -54,18 +54,19 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job theJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            assertEquals('\n',theJob.toString().charAt(0));
-            assertEquals('\n', theJob.toString().charAt(theJob.toString().length() - 1));
+
+        assertTrue(theJob.toString().startsWith(System.lineSeparator()));
+        assertTrue(theJob.toString().endsWith(System.lineSeparator()));
+
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
         Job theJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals("\nID: " + theJob.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n" , theJob.toString());
+        assertEquals(System.lineSeparator() + "ID: " + theJob.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence" + System.lineSeparator(), theJob.toString());
     }
-//    @Test
-//    public void testToStringHandlesEmptyField() {
-//        Job theJob = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
-//        assertEquals("\nID: " + theJob.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available\n" , theJob.toString());
-//
-//    }
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job theJob = new Job("Product tester", new Employer("Data not available"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Data not available"));
+        assertEquals(System.lineSeparator() + "ID: " + theJob.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available" + System.lineSeparator() , theJob.toString());
+    }
 }
