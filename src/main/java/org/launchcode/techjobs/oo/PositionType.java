@@ -7,15 +7,6 @@ public class PositionType extends JobField{
     public PositionType(String value) {
         super(value);
     }
-//    public PositionType() {
-//        id = nextId;
-//        nextId++;
-//    }
-//
-//    public PositionType(String value) {
-//        this();
-//        this.value = value;
-//    }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
 
@@ -30,11 +21,4 @@ public class PositionType extends JobField{
         PositionType position = (PositionType) o;
         return id == position.id;
     }
-
-    // Getters and Setters:
-
-
-
-
-
 }
