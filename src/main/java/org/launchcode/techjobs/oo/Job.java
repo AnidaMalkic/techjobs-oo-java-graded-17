@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 public class Job {
 
     private static final String DEFAULT_MESSAGE = "Data not available";
@@ -109,14 +111,14 @@ public class Job {
         if (positionType.getValue().isEmpty()) positionType.value = errorMessage;
         if (coreCompetency.getValue().isEmpty()) coreCompetency.value =errorMessage;
 
-        return System.lineSeparator() +
+        return lineSeparator() +
                 "ID: " + id +
-                "\nName: " + name +
-                "\nEmployer: " + employer.getValue() +
-                "\nLocation: " + location.getValue() +
-                "\nPosition Type: " + positionType.getValue() +
-                "\nCore Competency: " + coreCompetency.getValue() +
-                System.lineSeparator();
+                lineSeparator() + "Name: " + name +
+                lineSeparator() + "Employer: " + employer.getValue() +
+                lineSeparator() + "Location: " + location.getValue() +
+                lineSeparator() + "Position Type: " + positionType.getValue() +
+                lineSeparator() + "Core Competency: " + coreCompetency.getValue() +
+                lineSeparator();
 
 
 //    @Override
