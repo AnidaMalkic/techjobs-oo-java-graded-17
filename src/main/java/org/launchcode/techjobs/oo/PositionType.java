@@ -19,6 +19,6 @@ public class PositionType extends JobField{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PositionType position = (PositionType) o;
-        return id == position.id;
+        return getId() == position.getId();
     }
 }

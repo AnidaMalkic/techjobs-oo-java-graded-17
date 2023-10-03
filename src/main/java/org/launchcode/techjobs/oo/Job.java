@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Job {
 
+    private static final String DEFAULT_MESSAGE = "Data not available";
     private int id;
     private static int nextId = 1;
 
@@ -12,6 +13,9 @@ public class Job {
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
+
+
+
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -98,6 +102,13 @@ public class Job {
 
     @Override
     public String toString() {
+        String errorMessage = "Data not available";
+        if (name.isEmpty()) name = errorMessage;
+        if (employer.getValue().isEmpty()) employer.value = errorMessage;
+        if (location.getValue().isEmpty()) location.value = errorMessage;
+        if (positionType.getValue().isEmpty()) positionType.value = errorMessage;
+        if (coreCompetency.getValue().isEmpty()) coreCompetency.value =errorMessage;
+
         return System.lineSeparator() +
                 "ID: " + id +
                 "\nName: " + name +
@@ -107,6 +118,34 @@ public class Job {
                 "\nCore Competency: " + coreCompetency.getValue() +
                 System.lineSeparator();
 
-    }
 
+//    @Override
+//    public String toString() {
+//        return System.lineSeparator() +
+//                String.format("ID: %s\nName: %s\nEmployer: %s\nLocation: %s\nPosition Type: %s\nCore Competency: %s",
+//                id,
+//                name == null ? DEFAULT_MESSAGE : name,
+//                employer == null ? DEFAULT_MESSAGE : employer.getValue(),
+//                location == null ? DEFAULT_MESSAGE : location.getValue(),
+//                positionType == null ? DEFAULT_MESSAGE : positionType.getValue(),
+//                coreCompetency == null ? DEFAULT_MESSAGE : coreCompetency.getValue() ) +
+//                System.lineSeparator();
+
+//        if (name == null){
+//            System.out.println(errorMessage);
+//        }
+//        if (employer == null){
+//            System.out.println(errorMessage);}
+//
+//        if (location == null) {
+//            System.out.println(errorMessage);}
+//
+//        if (positionType == null) {
+//            System.out.println(errorMessage);}
+//
+//        if (coreCompetency == null) {
+//            System.out.println(errorMessage);}
+//    }
+
+    }
 }

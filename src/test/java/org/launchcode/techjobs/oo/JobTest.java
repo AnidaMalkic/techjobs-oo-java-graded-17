@@ -2,6 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
 
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -54,19 +55,28 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job theJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertTrue(theJob.toString().startsWith(lineSeparator()));
+        assertTrue(theJob.toString().endsWith(lineSeparator()));
 
-        assertTrue(theJob.toString().startsWith(System.lineSeparator()));
-        assertTrue(theJob.toString().endsWith(System.lineSeparator()));
+//        String firstChar = String.valueOf(theJob.toString().charAt(0));
+//        String lastChar = String.valueOf(theJob.toString().charAt(theJob.toString().length()-1));
+//        assertEquals(firstChar, lineSeparator());
+//        assertEquals(lastChar, lineSeparator());
+
+
+
+//            assertEquals(System.lineSeparator(),theJob.toString().charAt(0));
+//            assertEquals(System.lineSeparator(), theJob.toString().charAt(theJob.toString().length() - 1));
 
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
         Job theJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals(System.lineSeparator() + "ID: " + theJob.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence" + System.lineSeparator(), theJob.toString());
+        assertEquals(lineSeparator() + "ID: " + theJob.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence" + lineSeparator(), theJob.toString());
     }
     @Test
     public void testToStringHandlesEmptyField() {
-        Job theJob = new Job("Product tester", new Employer("Data not available"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Data not available"));
-        assertEquals(System.lineSeparator() + "ID: " + theJob.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available" + System.lineSeparator() , theJob.toString());
+        Job theJob = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        assertEquals(lineSeparator() + "ID: " + theJob.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available" + lineSeparator() , theJob.toString());
     }
 }

@@ -30,4 +30,5 @@ public abstract class JobField {
         return Objects.hash(getId());
     }
 
+
 }
